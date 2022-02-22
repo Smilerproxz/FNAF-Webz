@@ -1,40 +1,23 @@
 ![Five Nights at Freddy's](https://vignette.wikia.nocookie.net/freddy-fazbears-pizza/images/0/0c/Show_stage_nocamera.png/revision/latest?cb=20150119023526)
 
-# ~ Five Nights at Freddy's Web
+# Five Nights at Freddy's (FNAF) Web
 
-A web version I've made of the popular horror game [Five Nights at Freddy's](fnafar.com/). 
-⚛️ It was made using popular technologies like [ReactJS](https://pt-br.reactjs.org/) and [Redux](https://redux.js.org/).
+A web version of the popular horror game [Five Nights at Freddy's](fnafar.com/) made using [ReactJS](https://pt-br.reactjs.org/) and [Redux](https://redux.js.org/).
+<br />
+This repository is a fork of [Wendell Sousa's original project](https://github.com/wellsousaaa/Five-Nights-at-Freddys-Web.git).
 
-Uma versão na Web que eu fiz do famoso jogo de terror [Five Nights at Freddy's](fnafar.com/). 
-⚛️ Foi feito usando tecnologias populares como [ReactJS](https://pt-br.reactjs.org/) e [Redux](https://redux.js.org/).
-
-## VERSION 3.0 ⭐
-- Added custom night!
-
-~ Link: [https://wellsousaaa.github.io/Five-Nights-at-Freddys-Web/](https://wellsousaaa.github.io/Five-Nights-at-Freddys-Web/)
+Click [here](https://dorukyum.github.io/FNAF-Web) to play.
 
 ![Five Nights at Freddy's](FNAF.webp)
 
-## Installation
+## Local Hosting
+```sh
+# clone the repo
+git clone https://github.com/dorukyum/FNAF-Web.git
 
-First you need to clone this repository
-
-```
-git clone https://github.com/wellsousaaa/Five-Nights-at-Freddys-Web.git
-```
-
-Then start it using npm or yarn
-
-```
+# install the dependancies
 npm install
-```
 
-Then start localhost
-
-```
+# start the server
 npm start
 ```
-
-## Credits
-
-This project was made by Wendell Sousa :D
