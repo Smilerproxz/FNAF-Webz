@@ -63,7 +63,7 @@ function Camera({
         if (areAnimatronicsMoving && isCameraOpen) {
             let MusicNumber = Math.floor(Math.random() * 2);
             let Sound;
-            if (MusicNumber == 1 || MusicNumber == 2) {
+            if (MusicNumber === 1 || MusicNumber === 2) {
                 Sound = new Audio(AnimatronicsMoving);
             } else {
                 Sound = new Audio(AnimatronicsMoving2);

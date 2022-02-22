@@ -173,7 +173,7 @@ function Office({
         const pauseMusicInterval = setInterval(() => {
           let pauseNumber = Math.floor(Math.random() * 3);
           if (!canJumpscare) clearInterval(pauseMusicInterval);
-          if (pauseNumber == 0 && canJumpscare) {
+          if (pauseNumber === 0 && canJumpscare) {
             setBlackoutBackground(null);
             musicBox.pause();
             clearInterval(pauseMusicInterval);
@@ -181,7 +181,7 @@ function Office({
             const freddyInterval = setInterval(() => {
               let freddyNumber = Math.floor(Math.random() * 9);
               if (!canJumpscare) clearInterval(freddyInterval);
-              if (freddyNumber == 0 && canJumpscare) {
+              if (freddyNumber === 0 && canJumpscare) {
                 const JumpscareImage = FreddyJumpscare1;
                 setBlackoutBackground(JumpscareImage);
                 jumpscareSound.play();

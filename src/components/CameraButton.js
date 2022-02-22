@@ -5,7 +5,7 @@ function CameraButton(props) {
     const { handleCameraButton } = props;
 
     const handleCamera = ({ target }) => {
-        if (target.dataset.disabled == "true") {
+        if (target.dataset.disabled === "true") {
             target.dataset.disabled = "false";
             Media.Sounds.OpenCamera.play();
             handleCameraButton();
