@@ -28,9 +28,11 @@ const AnimatronicContainer = (props) => {
             />
             
             <div className={styles.range_buttons}>
+                <button onClick={() => {changeRange(-range, character)}}> 0 </button>
                 <button onClick={() => {changeRange(-1, character)}} disabled={range === 0}> {"<"} </button>
                 <span> {range} </span>
                 <button onClick={() => {changeRange(+1, character)}} disabled={range === 20}> {">"} </button>
+                <button onClick={() => {changeRange(+20-range, character)}}> 20 </button>
             </div>
         </div>
     )
