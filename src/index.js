@@ -23,8 +23,7 @@ const Start = () => {
     console.log(window.innerHeight > window.innerWidth);
     if (window.innerHeight > window.innerWidth) {
       window.alert(
-        `Para uma melhor experiência, vire seu celular para o modo de paisagem (modo deitado)
-                 ~ For a better experience, please rotate your phone to landscape mode`
+        "Rotate your phone to landscape mode for a better experience."
       );
     }
   }, []);
