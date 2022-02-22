@@ -97,7 +97,7 @@ const CustomNight = ({state, setStart}) => {
     return (
         <div className={styles.custom_night_container}>
 
-                <a href="https://github.com/wellsousaaa/Five-Nights-at-Freddys-Web" target="_blank" className={styles.github_icon}>
+                <a href="https://github.com/dorukyum/FNAF-Web" target="_blank" className={styles.github_icon}>
                     <img src="https://icon-library.com/images/github-icon-white/github-icon-white-6.jpg" width="50" height="50" />
                 </a>
             
