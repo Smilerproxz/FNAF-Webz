@@ -80,6 +80,7 @@ const cameraImages = {
   SupplyCloset_b,
   WestHall,
   WestHall_b,
+  FoxyHallway,
   WHallCorner,
   WHallCorner_b,
   Restrooms,
@@ -107,6 +108,7 @@ const cameraImages = {
 export default function getCam(animatronics, camera, foxy = "") {
   let location = camera.trim().replaceAll(" ", "");
 
+  if (location === "WestHall" & foxy === "_3") return FoxyHallway;
   if (location === "W.HallCorner") location = "WHallCorner";
   if (location === "E.HallCorner") location = "EHallCorner";
 
