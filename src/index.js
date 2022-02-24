@@ -18,6 +18,7 @@ const initialState = {
 const Start = () => {
   const [Start, setStart] = useState(false);
   const [stages, setStages] = useState(initialState);
+  const [hourLength, setHourLength] = useState(89000);
 
   useEffect(() => {
     console.log(window.innerHeight > window.innerWidth);
@@ -34,11 +35,13 @@ const Start = () => {
         <div className="custom-night">
           <CustomNight
             setStart={setStart}
-            state={{ ranges: stages, setStages }}
+            state={{ ranges: stages, setStages, setHourLength }}
+            hourLength={hourLength}
+            setHourLength={setHourLength}
           />
         </div>
       ) : (
-        <Controller stages={stages} setStart={setStart} />
+        <Controller stages={stages} setStart={setStart} hourLength={hourLength} />
       )}
     </>
   );

@@ -38,7 +38,7 @@ const AnimatronicContainer = (props) => {
     )
 };
 
-const CustomNight = ({state, setStart}) => {
+const CustomNight = ({state, setStart, hourLength, setHourLength}) => {
     const [goldenFreddy, setGoldenFreddy] = React.useState(false);
     const changeMode = (value) => {
 
@@ -137,6 +137,24 @@ const CustomNight = ({state, setStart}) => {
                     changeMode("IMPOSSIBLE")
                 }} data-selected={state.ranges.mode === "IMPOSSIBLE"}>
                     IMPOSSIBLE {hasWon("IMPOSSIBLE")}
+                </button>
+            </div>
+
+            <div className={styles.start_screen}>
+                <button onClick={() => {
+                    setHourLength(45000)
+                }} data-selected={hourLength === 45000}>
+                    SHORT (60s)
+                </button>
+                <button onClick={() => {
+                    setHourLength(89000)
+                }} data-selected={hourLength === 89000}>
+                    DEFAULT (89s)
+                </button>
+                <button onClick={() => {
+                    setHourLength(120000)
+                }} data-selected={hourLength === 120000}>
+                    LONG (120s)
                 </button>
             </div>
 
