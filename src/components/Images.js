@@ -32,6 +32,7 @@ import SupplyCloset_b from "../media/Textures/Cams/SupplyRoom-b.webp";
 ///WEST HALL
 import WestHall from "../media/Textures/Cams/West_Hall.webp";
 import WestHall_b from "../media/Textures/Cams/West_Hall-b.webp";
+import GoldenFreddyPoster from "../media/Textures/Cams/GoldenFreddyPoster.png"
 import FoxyHallway from "../media/Textures/Foxy-Hallway.webp";
 
 ///WEST HALL CORNER
@@ -109,8 +110,13 @@ export default function getCam(animatronics, camera, foxy = "") {
   let location = camera.trim().replaceAll(" ", "");
 
   if (location === "WestHall" & foxy === "_3") return FoxyHallway;
-  if (location === "W.HallCorner") location = "WHallCorner";
-  if (location === "E.HallCorner") location = "EHallCorner";
+
+  if (location === "W.HallCorner") {
+    if(Math.random() < 0.00001) return GoldenFreddyPoster;  // 1 in 100000 chance
+    location = "WHallCorner";
+  }
+
+  else if (location === "E.HallCorner") location = "EHallCorner";
 
   return cameraImages[
     `${location}${animatronics}${location === "PirateCove" ? foxy : ""}`
