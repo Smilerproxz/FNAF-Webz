@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
 
 import Animatronic from "./components/Animatronic";
@@ -23,6 +23,8 @@ const Game = ({
   endGame,
   dispatch,
 }) => {
+  const [goldenFreddy, setGoldenFreddy] = useState(false);
+
   useEffect(() => {
     Ambience.currentTime = 0;
     Ambience.play();
@@ -100,9 +102,9 @@ const Game = ({
       {!gameOver ? (
         <>
           {energy <= 0 ? null : <Hud />}
-          <Camera handleJumpscare={handleJumpscare} />
+          <Camera handleJumpscare={handleJumpscare} goldenFreddy={goldenFreddy} setGoldenFreddy={setGoldenFreddy}/>
           {isCameraOpen ? null : (
-            <Office endGame={endGame} blackout={energy <= 0} />
+            <Office endGame={endGame} blackout={energy <= 0} goldenFreddyEnabled={goldenFreddy} />
           )}
         </>
       ) : null}

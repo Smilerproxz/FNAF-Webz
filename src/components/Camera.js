@@ -19,6 +19,8 @@ function Camera({
     camera,
     cameraButtonDisappear,
     dispatch,
+    goldenFreddy,
+    setGoldenFreddy,
 }) {
     const [Image, setImage] = useState(Media.Images.Stage);
 
@@ -55,7 +57,7 @@ function Camera({
         if (Chica.camera === camera) result += "_c";
         if (Freddy.camera === camera) result += "_f";
 
-        const newCamera = getCam(result, camera, Foxy.camera);
+        const newCamera = getCam(result, camera, Foxy.camera, goldenFreddy, setGoldenFreddy);
         setImage(newCamera);
     }, [camera, animatronics, areAnimatronicsMoving, animatronics.Foxy.camera]);
 

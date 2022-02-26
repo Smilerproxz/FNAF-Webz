@@ -33,6 +33,8 @@ import RL_CHICA from "../media/Textures/Office/RL_CHICA.webp";
 import RL_LL_CHICA from "../media/Textures/Office/RL_LL_CHICA.webp";
 import RL_LL_BONNIE_CHICA from "../media/Textures/Office/RL_LL_BONNIE_CHICA.webp";
 
+import goldenFreddyImage from "../media/Textures/GoldenFreddy.png"
+
 let canJumpscare = true;
 
 const officeImages = {
@@ -65,6 +67,7 @@ function Office({
   isCameraOpen,
   endGame,
   dispatch,
+  goldenFreddyEnabled,
 }) {
   const [isJumpscare, setIsJumpscare] = useState(null);
   const [background, setBackground] = useState(Default);
@@ -255,11 +258,30 @@ function Office({
       </div>
     );
 
+  const goldenFreddyInOffice = () => {
+    if (goldenFreddyEnabled) {
+      return (
+        <img
+          alt="Golden Freddy"
+          draggable="false"
+          style={{
+            position: "absolute",
+            left: "24%",
+            top: "32%",
+            height: "68%",
+          }}
+          src={goldenFreddyImage}
+        />
+      );
+    }
+  }
+
   return (
     <>
       {!blackout ? (
         <div className="office-container">
           <div style={{ width: "fit-content" }}>
+            {goldenFreddyInOffice()}
             <img
               alt="Office"
               draggable="false"

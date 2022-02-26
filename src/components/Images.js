@@ -106,17 +106,19 @@ const cameraImages = {
   Kitchen_c_f,
 };
 
-export default function getCam(animatronics, camera, foxy = "") {
+export default function getCam(animatronics, camera, foxy = "", goldenFreddy, setGoldenFreddy) {
   let location = camera.trim().replaceAll(" ", "");
-
   if (location === "WestHall" & foxy === "_3") return FoxyHallway;
 
   if (location === "W.HallCorner") {
-    if(Math.random() < 0.00001) return GoldenFreddyPoster;  // 1 in 100000 chance
+    if (goldenFreddy || Math.random() < 0.00001) { // 1 in 100000 chance
+      setGoldenFreddy(true);
+      return GoldenFreddyPoster;
+    }
     location = "WHallCorner";
-  }
-
-  else if (location === "E.HallCorner") location = "EHallCorner";
+  } else if (goldenFreddy) {
+    setGoldenFreddy(false);
+  } else if (location === "E.HallCorner") location = "EHallCorner";
 
   return cameraImages[
     `${location}${animatronics}${location === "PirateCove" ? foxy : ""}`
