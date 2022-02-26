@@ -98,7 +98,7 @@ const CustomNight = ({state, setStart, hourLength, setHourLength}) => {
         <div className={styles.custom_night_container}>
 
                 <a href="https://github.com/dorukyum/FNAF-Web" target="_blank" className={styles.github_icon}>
-                    <img src="https://icon-library.com/images/github-icon-white/github-icon-white-6.jpg" width="50" height="50" />
+                    <img alt="GitHub" src="https://icon-library.com/images/github-icon-white/github-icon-white-6.jpg" width="50" height="50" />
                 </a>
             
             <h1>{"Five Nights at Freddy's Web"}</h1>
