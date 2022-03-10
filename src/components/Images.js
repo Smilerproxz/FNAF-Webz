@@ -1,3 +1,8 @@
+import React from "react";
+import ReactDOM from "react-dom";
+import styles from "../css/CustomNight.module.css"
+import goldenFreddyAudio from "../media/Sounds/golden_freddy.ogg";
+
 ///SHOW STAGE
 import Stage from "../media/Textures/Cams/Stage.webp";
 import Stage_b_c_f from "../media/Textures/Cams/Stage-b-c-f.webp";
@@ -106,13 +111,35 @@ const cameraImages = {
   Kitchen_c_f,
 };
 
-export default function getCam(animatronics, camera, foxy = "", goldenFreddy, setGoldenFreddy) {
+function GoldenFreddyJumpscare({ setGoldenFreddy }) {
+  React.useEffect(() => {
+    setTimeout(() => {
+      window.location.reload();
+      setGoldenFreddy(false);
+    }, 5000);
+  }, [])
+
+  const golden = new Audio(goldenFreddyAudio);
+  golden.play();
+  return <div className={styles.golden_freddy} />;
+}
+
+function getCam(animatronics, camera, foxy = "", goldenFreddy, setGoldenFreddy) {
   let location = camera.trim().replaceAll(" ", "").replaceAll(".", "");
   if (location === "WestHall" & foxy === "_3") return FoxyHallway;
 
   if (location === "WHallCorner") {
     if (goldenFreddy || Math.random() < 0.00001) { // 1 in 100000 chance
       setGoldenFreddy(true);
+      setTimeout((goldenFreddyEnabled) => {
+        if (goldenFreddyEnabled) {
+          setGoldenFreddy(false);
+          ReactDOM.render(
+            <GoldenFreddyJumpscare setGoldenFreddy={setGoldenFreddy} />,
+            document.getElementById("root"),
+          );
+        }
+      }, 5000, goldenFreddy);
       return GoldenFreddyPoster;
     }
   } else if (goldenFreddy) {
@@ -123,3 +150,5 @@ export default function getCam(animatronics, camera, foxy = "", goldenFreddy, se
     `${location}${animatronics}${location === "PirateCove" ? foxy : ""}`
   ];
 }
+
+export { GoldenFreddyJumpscare, getCam };

@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { connect } from "react-redux";
-import getCam from "./Images";
+import { getCam } from "./Images";
 
 import AnimatronicsMoving from "../media/Sounds/garble1.mp3";
 import AnimatronicsMoving2 from "../media/Sounds/garble2.mp3";

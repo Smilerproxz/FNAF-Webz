@@ -6,7 +6,7 @@ import Bonnie from "./media/Textures/CustomNight/bonnie.png";
 import Chica from "./media/Textures/CustomNight/chica.png";
 import Foxy from "./media/Textures/CustomNight/foxy.png";
 
-import goldenFreddyAudio from "./media/Sounds/golden_freddy.ogg";
+import { GoldenFreddyJumpscare } from "./components/Images";
 
 const images = {
     Freddy,
@@ -82,14 +82,12 @@ const CustomNight = ({ state, setStart, hourLength, setHourLength }) => {
             state.ranges.Chica === 8 &&
             state.ranges.Foxy === 7
         ) {
-            const golden = new Audio(goldenFreddyAudio);
-            golden.play();
             return setGoldenFreddyJumpscare(true);
         }
         setStart(true);
     }
 
-    if (goldenFreddyJumpscare) return <GoldenFreddy setGoldenFreddy={setGoldenFreddyJumpscare} />;
+    if (goldenFreddyJumpscare) return <GoldenFreddyJumpscare setGoldenFreddy={setGoldenFreddyJumpscare} />;
 
     return (
         <div className={styles.custom_night_container}>
@@ -162,15 +160,3 @@ const CustomNight = ({ state, setStart, hourLength, setHourLength }) => {
 };
 
 export default CustomNight;
-
-function GoldenFreddy({ setGoldenFreddy }) {
-    React.useEffect(() => {
-        setTimeout(() => {
-            window.open("about:blank", "_self");
-            window.close();
-            setGoldenFreddy(false);
-        }, 5000);
-    }, [])
-
-    return <div className={styles.golden_freddy} />
-}
