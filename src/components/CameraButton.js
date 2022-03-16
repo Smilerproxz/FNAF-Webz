@@ -19,7 +19,7 @@ function CameraButton(props) {
             <img
                 draggable="false"
                 className="camera-button"
-                alt="Botão da camera"
+                alt="Camera button"
                 data-disabled="true"
                 src={Media.Images.CameraButton}
                 style={{ position: "absolute", zIndex: 1 }}
