@@ -15,7 +15,7 @@ Click [here](https://dorukyum.github.io/FNAF-Web) to play.
 # clone the repo
 git clone https://github.com/dorukyum/FNAF-Web.git
 
-# install the dependancies
+# install the dependencies
 npm install
 
 # start the server
