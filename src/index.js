@@ -7,7 +7,8 @@ import { Provider } from "react-redux";
 import store from "./store/store";
 import CustomNight from "./CustomNight";
 
-const initialState = {
+const stateFromStorage = localStorage.getItem("stages");
+const initialState = stateFromStorage ? JSON.parse(stateFromStorage) : {
   mode: "NORMAL",
   Freddy: 10,
   Bonnie: 10,
@@ -17,7 +18,14 @@ const initialState = {
 
 const Start = () => {
   const [Start, setStart] = useState(false);
-  const [stages, setStages] = useState(initialState);
+
+  const [stages, reactSetStages] = useState(initialState);
+  function setStages(getNewStages) {
+    const newStages = getNewStages(stages);
+    reactSetStages(newStages);
+    localStorage.setItem("stages", JSON.stringify(newStages));
+  };
+
   const [hourLength, setHourLength] = useState(89000);
 
   useEffect(() => {
